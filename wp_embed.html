@@ -44,110 +44,129 @@ body.page .main, body.page .content-in { padding-top: 0 !important; }
 .ev-tool {
   font-family: -apple-system, "Yu Gothic UI", "Yu Gothic", sans-serif;
   background: #f5f5f5; color: #222;
-  padding: 12px; margin: 0;
+  padding: 6px; margin: 0;
 }
-.ev-tool .panel { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-                  padding: 12px 14px; margin-bottom: 12px; }
-.ev-tool .ctrl { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start; }
-.ev-tool .ctrl-group { margin-bottom: 4px; }
+.ev-tool .panel {
+  background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  padding: 10px 12px; margin-bottom: 10px;
+}
+.ev-tool .ctrl { display: flex; gap: 14px 18px; flex-wrap: wrap; align-items: flex-start; }
+.ev-tool .ctrl-group { margin-bottom: 2px; }
 .ev-tool .ctrl-group.hide { display: none; }
-.ev-tool .ctrl-group label.h { display: block; font-size: 12px; font-weight: bold; margin-bottom: 6px; color: #34495E; }
-.ev-tool .radio-row label { display: inline-block; font-weight: normal; margin: 0 8px 6px 0; font-size: 14px;
-                            cursor: pointer; padding: 6px 12px; background: #ECF0F1; border-radius: 16px; color: #222; }
-.ev-tool .radio-row input { margin-right: 4px; transform: scale(1.1); vertical-align: middle; }
+.ev-tool .ctrl-group label.h {
+  display: block; font-size: 12px; font-weight: bold;
+  margin-bottom: 5px; color: #34495E;
+}
+.ev-tool .radio-row label {
+  display: inline-block; font-weight: normal; margin: 0 6px 4px 0;
+  font-size: 13px; cursor: pointer; padding: 5px 11px;
+  background: #ECF0F1; border-radius: 14px; color:#222;
+}
+.ev-tool .radio-row input { margin-right: 4px; transform: scale(1.05); vertical-align: middle; }
 .ev-tool .radio-row input:checked + span { font-weight: bold; }
-.ev-tool select { padding: 7px 8px; font-size: 14px; border: 1px solid #bbb; border-radius: 4px; background: #fff; color: #222; }
-.ev-tool .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid #ddd; border-radius: 6px; max-width: 560px; background: #fff; }
-.ev-tool table.main { border-collapse: collapse !important; background: #fff !important; width: 100%; }
-.ev-tool table.main th { background: #D6DBDF !important; padding: 8px 10px; font-size: 12px; border: 1px solid #999 !important;
-                         text-align: center; position: sticky; top: 0; z-index: 2; white-space: nowrap; color: #222 !important; }
+.ev-tool select {
+  padding: 6px 8px; font-size: 14px;
+  border: 1px solid #bbb; border-radius: 4px; background:#fff; color:#222;
+}
+.ev-tool .info { font-size: 12px; color: #666; margin: 6px 2px 8px; line-height: 1.5; }
+.ev-tool .tbl-scroll {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  border: 1px solid #ddd; border-radius: 6px; background:#fff;
+}
+.ev-tool table.main { border-collapse: collapse !important; background: #fff !important; width: 100%; min-width: 520px; }
+.ev-tool table.main th {
+  background: #D6DBDF !important; padding: 7px 9px; font-size: 12px;
+  border: 1px solid #999 !important; text-align: center;
+  position: sticky; top: 0; z-index: 2; white-space: nowrap; color:#222 !important;
+}
 .ev-tool table.main th.medal { background: #D1F2EB !important; }
-.ev-tool table.main td { padding: 7px 10px; font-size: 13px; border: 1px solid #d0d0d0 !important; text-align: right; white-space: nowrap; color: #222 !important; background: #fff !important; }
-.ev-tool table.main td.sc, .ev-tool table.main th.sc { position: sticky; left: 0; z-index: 1;
-                         background: #EBEDEF !important; text-align: center; font-weight: bold; font-size: 13px; }
+.ev-tool table.main td {
+  padding: 6px 9px; font-size: 13px; border: 1px solid #d0d0d0 !important;
+  text-align: right; white-space: nowrap; color:#222 !important; background:#fff !important;
+}
+.ev-tool table.main td.sc, .ev-tool table.main th.sc {
+  position: sticky; left: 0; z-index: 1;
+  background: #EBEDEF !important; text-align: center; font-weight: bold; font-size: 13px;
+}
 .ev-tool table.main th.sc { z-index: 3; }
 .ev-tool table.main td.na { color: #bbb !important; text-align: center; }
 .ev-tool td.roi { font-weight: bold; }
 .ev-tool td.roi.pos { background: #EBF5FB !important; color: #1F5FBF !important; }
 .ev-tool td.roi.neg { background: #FDEDEC !important; color: #C0392B !important; }
 
-/* スマホ幅: ダーク + 表幅統一 */
+/* スマホ幅: 表幅統一+padding詰め(白ベース維持) */
 @media (max-width: 600px){
-  .ev-tool { background: #16181c; color: #e2e4e8; padding: 4px; }
-  .ev-tool .panel { background: #23262d; box-shadow: 0 1px 4px rgba(0,0,0,0.4); padding: 6px 8px; }
+  .ev-tool { padding: 3px; }
+  .ev-tool .panel { padding: 6px 8px; }
   .ev-tool .ctrl { gap: 6px 10px; }
   .ev-tool .ctrl-group { margin-bottom: 0; }
-  .ev-tool .ctrl-group label.h { color: #aeb4be; font-size: 11px; margin-bottom: 3px; }
-  .ev-tool .radio-row label { background: #31353d; color: #d5d8dd; font-size: 12px; padding: 4px 8px; margin: 0 3px 3px 0; }
-  .ev-tool .radio-row input:checked + span { color: #6db3ff; }
-  .ev-tool select { background: #2b2f37; color: #e2e4e8; border-color: #444; padding: 4px 6px; font-size: 13px; }
-  .ev-tool .tbl-scroll { border-color: #3a3d44; max-width: 100%; background: #23262d; }
-  .ev-tool table.main { background: #23262d !important; min-width: 0; width: 100%; table-layout: fixed; }
+  .ev-tool .ctrl-group label.h { font-size: 11px; margin-bottom: 3px; }
+  .ev-tool .radio-row label { font-size: 12px; padding: 4px 8px; margin: 0 3px 3px 0; }
+  .ev-tool select { padding: 4px 6px; font-size: 13px; }
+  .ev-tool .info { font-size: 11px; margin: 4px 2px 6px; }
+  .ev-tool .tbl-scroll { max-width: 100%; }
+  .ev-tool table.main { min-width: 0; width: 100%; table-layout: fixed; }
   .ev-tool table.main th, .ev-tool table.main td { width: 54px; }
   .ev-tool table.main th.sc, .ev-tool table.main td.sc { width: 44px; }
-  .ev-tool table.main th { background: #2f333b !important; color: #d5d8dd !important; border-color: #43474f !important; padding: 4px 3px; font-size: 11px; }
-  .ev-tool table.main th.medal { background: #234038 !important; color: #b8e6d6 !important; }
-  .ev-tool table.main td { background: #23262d !important; color: #e2e4e8 !important; border-color: #3a3d44 !important; padding: 4px 3px; font-size: 11px; overflow: hidden; text-overflow: ellipsis; }
-  .ev-tool table.main td.sc, .ev-tool table.main th.sc { background: #2d3344 !important; color: #e8eaf0 !important; font-size: 12px; padding: 4px 3px; }
-  .ev-tool table.main td.na { color: #666 !important; }
-  .ev-tool td.roi.pos { background: #16263a !important; color: #6db3ff !important; }
-  .ev-tool td.roi.neg { background: #341a1c !important; color: #ff8b8b !important; }
+  .ev-tool table.main th { padding: 4px 3px; font-size: 11px; }
+  .ev-tool table.main td { padding: 4px 3px; font-size: 11px; overflow: hidden; text-overflow: ellipsis; }
+  .ev-tool table.main td.sc, .ev-tool table.main th.sc { font-size: 12px; padding: 4px 3px; }
 }
 </style>
 
 <div class="ev-tool">
-<div class="panel">
-  <div class="ctrl">
-    <div class="ctrl-group">
-      <label class="h">戦略</label>
-      <div class="radio-row" id="ev_strat">
-        <label><input type="radio" name="ev_strat" value="RUSH狙い" checked><span>RUSH狙い</span></label>
-        <label><input type="radio" name="ev_strat" value="解放狙い"><span>RUSH1回狙い(中以上確認で解放まで)</span></label>
-        <label><input type="radio" name="ev_strat" value="CZ一回狙い"><span>CZ1回狙い(中以上確認で解放まで)</span></label>
+  <div class="panel">
+    <div class="ctrl">
+      <div class="ctrl-group">
+        <label class="h">戦略</label>
+        <div class="radio-row" id="ev_strat">
+          <label><input type="radio" name="ev_strat" value="RUSH狙い" checked=""><span>RUSH狙い</span></label>
+          <label><input type="radio" name="ev_strat" value="解放狙い"><span>RUSH1回狙い</span></label>
+          <label><input type="radio" name="ev_strat" value="CZ一回狙い"><span>CZ1回狙い</span></label>
+        </div>
       </div>
-    </div>
-    <div class="ctrl-group" id="ev_kptGroup">
-      <label class="h">喰ポイント</label>
-      <select id="ev_kpt"></select>
-    </div>
-    <div class="ctrl-group">
-      <label class="h">スルー回数</label>
-      <select id="ev_suru"></select>
-    </div>
-    <div class="ctrl-group">
-      <label class="h">前回RUSH</label>
-      <div class="radio-row" id="ev_kake">
-        <label><input type="radio" name="ev_kake" value="1" checked><span>駆け抜け</span></label>
-        <label><input type="radio" name="ev_kake" value="0"><span>非駆け抜け</span></label>
+      <div class="ctrl-group" id="ev_kptGroup">
+        <label class="h">喰ポイント</label>
+        <select id="ev_kpt"></select>
       </div>
-    </div>
-    <div class="ctrl-group">
-      <label class="h">液晶G</label>
-      <select id="ev_lcd"></select>
-    </div>
-    <div class="ctrl-group">
-      <label class="h">既吸収なし台</label>
-      <div class="radio-row" id="ev_abs">
-        <label><input type="radio" name="ev_abs" value="0" checked><span>あり</span></label>
-        <label><input type="radio" name="ev_abs" value="1"><span>なし</span></label>
+      <div class="ctrl-group">
+        <label class="h">スルー回数</label>
+        <select id="ev_suru"></select>
       </div>
-    </div>
-    <div class="ctrl-group">
-      <label class="h">交換率</label>
-      <div class="radio-row" id="ev_kpat">
-        <label><input type="radio" name="ev_kpat" value="eq" checked><span>等価(20円)</span></label>
-        <label><input type="radio" name="ev_kpat" value="k56"><span>50貸し/56交換</span></label>
-        <label><input type="radio" name="ev_kpat" value="k52"><span>46貸し/52交換</span></label>
+      <div class="ctrl-group">
+        <label class="h">前回RUSH</label>
+        <div class="radio-row" id="ev_kake">
+          <label><input type="radio" name="ev_kake" value="1" checked=""><span>駆け抜け</span></label>
+          <label><input type="radio" name="ev_kake" value="0"><span>非駆抜</span></label>
+        </div>
       </div>
-    </div>
-    <div class="ctrl-group" id="ev_nmGroup">
-      <label class="h">持ちメダル</label>
-      <select id="ev_nm"></select>
+      <div class="ctrl-group">
+        <label class="h">液晶G</label>
+        <select id="ev_lcd"></select>
+      </div>
+      <div class="ctrl-group">
+        <label class="h">既吸収なし台</label>
+        <div class="radio-row" id="ev_abs">
+          <label><input type="radio" name="ev_abs" value="0" checked=""><span>あり</span></label>
+          <label><input type="radio" name="ev_abs" value="1"><span>なし</span></label>
+        </div>
+      </div>
+      <div class="ctrl-group">
+        <label class="h">交換率</label>
+        <div class="radio-row" id="ev_kpat">
+          <label><input type="radio" name="ev_kpat" value="eq" checked=""><span>等価</span></label>
+          <label><input type="radio" name="ev_kpat" value="k56"><span>50貸/56交換</span></label>
+          <label><input type="radio" name="ev_kpat" value="k52"><span>46貸/52交換</span></label>
+        </div>
+      </div>
+      <div class="ctrl-group">
+        <label class="h">持ちメダル</label>
+        <select id="ev_nm"></select>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="tbl-scroll"><table class="main" id="ev_tbl"></table></div>
+  <div id="ev_info" class="info"></div>
+  <div class="tbl-scroll"><table class="main" id="ev_tbl"></table></div>
 </div>
 
 <script>
@@ -160,10 +179,7 @@ const DATA_CZ_ABS={"7":{"0":{"1":{"0":[15.4,11.2,-19.95,98.7,368.3,131.6],"50":[
 (function(){
 const lcdAx=[0,50,100,150,200];
 function jitAx(suru){return suru>=1?[100,200,300,400,500,600]:[0,100,200,300,400,500,600];}
-const kptSel=document.getElementById("ev_kpt");for(let k=7;k<=15;k++){let o=new Option(k+" pt",k);if(k==10)o.selected=true;kptSel.add(o);}
-const suruSel=document.getElementById("ev_suru");for(let s=0;s<=3;s++){let o=new Option(s+" 回",s);if(s==2)o.selected=true;suruSel.add(o);}
-const lcdSel=document.getElementById("ev_lcd");for(const l of lcdAx){let o=new Option(l+" G",l);lcdSel.add(o);}
-function val(id){return document.querySelector('input[name='+id+']:checked').value;}
+const STRAT_LABEL={"RUSH狙い":"RUSH狙い","解放狙い":"RUSH1回狙い","CZ一回狙い":"CZ1回狙い"};
 const KPATS={eq:{kashi:50,kokan:50,label:"等価"},k56:{kashi:50,kokan:56,label:"50貸/56交換"},k52:{kashi:46,kokan:52,label:"46貸/52交換"}};
 const NM_OPTIONS={eq:[0],k56:[0,100,200,300,400,500],k52:[0,100,200,300,460]};
 const コイン持ち=31, 純増=4;
@@ -183,13 +199,24 @@ function calc(ev, 通常G, RG, kpat, nm){
 }
 function yenFmt(z){return (z>=0?"+":"")+Math.round(z).toLocaleString();}
 
+const kptSel=document.getElementById("ev_kpt");for(let k=7;k<=15;k++){let o=new Option(k+" pt",k);if(k==10)o.selected=true;kptSel.add(o);}
+const suruSel=document.getElementById("ev_suru");for(let s=0;s<=3;s++){let o=new Option(s+" 回",s);if(s==2)o.selected=true;suruSel.add(o);}
+const lcdSel=document.getElementById("ev_lcd");for(const l of lcdAx){let o=new Option(l+" G",l);lcdSel.add(o);}
+function val(id){return document.querySelector('input[name='+id+']:checked').value;}
+
+function refreshNm(){
+  const kpat=val("ev_kpat"), opts=NM_OPTIONS[kpat], prev=+document.getElementById("ev_nm").value;
+  const sel=document.getElementById("ev_nm"); sel.innerHTML="";
+  for(const m of opts){let o=new Option(m+" 枚",m);if(m===prev)o.selected=true;sel.add(o);}
+  if(sel.selectedIndex<0)sel.selectedIndex=0;
+}
+
 function render(){
-  if(typeof DATA==="undefined"){document.getElementById("ev_tbl").innerHTML='<tr><td class="na" style="padding:14px">data.js 未読込</td></tr>';return;}
+  if(typeof DATA==="undefined"){document.getElementById("ev_tbl").innerHTML='<tr><td class="na" style="padding:14px">data 読込失敗</td></tr>';return;}
   const strat=val("ev_strat");
   document.getElementById("ev_kptGroup").classList.toggle("hide", strat==="CZ一回狙い");
   if(strat==="CZ一回狙い") renderCZ(); else renderMain(strat);
 }
-
 function renderMain(strat){
   const kpt=+kptSel.value, suru=+suruSel.value, kake=+val("ev_kake"), lcd=+lcdSel.value;
   const kpat=val("ev_kpat"), nm=+document.getElementById("ev_nm").value;
@@ -198,8 +225,7 @@ function renderMain(strat){
   let head='<tr><th class="sc">RUSH間G</th><th>RUSH確率</th>';
   if(isKai) head+='<th>接続率</th>';
   head+='<th>解放率</th><th>期待値(円)</th><th class="medal">機械割</th></tr>';
-  let h=head;
-  const span=isKai?5:4;
+  let h=head; const span=isKai?5:4;
   for(const j of jits){
     let v;const isAbs=val("ev_abs")==="1";
     if(isAbs){try{v=(typeof DATA_ABS!=="undefined")?DATA_ABS[strat][kpt][matagi][lcd][j]:null;}catch(e){v=null;}}
@@ -214,11 +240,14 @@ function renderMain(strat){
       +`<td class="roi ${ec}">${yenFmt(r.yenEv)}</td><td class="roi ${kc}">${r.kw.toFixed(1)}%</td></tr>`;
   }
   document.getElementById("ev_tbl").innerHTML=h;
+  const win=matagi>0?`K候補窓 [${Math.max(0,kpt-matagi+1)}〜${kpt}]`:`跨ぎ無し`;
+  document.getElementById("ev_info").innerHTML=
+    `【${STRAT_LABEL[strat]}】喰pt=${kpt} / スルー${suru} / ${kake?"前駆抜":"前非駆抜"} / 液晶${lcd}G / ${KPATS[kpat].label}・持ち${nm}枚 → 跨${matagi}（${win}）${val("ev_abs")==="1"?" ・ <b style='color:#C0392B'>既吸収なし台 なし</b>":""}`;
 }
-
 function renderCZ(){
   const suru=+suruSel.value, kake=+val("ev_kake"), lcd=+lcdSel.value;
   const kpat=val("ev_kpat"), nm=+document.getElementById("ev_nm").value;
+  const matagi=suru+kake, RG=suru*100+lcd;
   let h='<tr><th class="sc">喰pt</th><th>接続率</th><th>解放率</th><th>期待値(円)</th><th class="medal">機械割</th></tr>';
   for(let k=7;k<=15;k++){
     let v;const isAbs=val("ev_abs")==="1";
@@ -232,14 +261,10 @@ function renderCZ(){
       +`<td class="roi ${ec}">${yenFmt(r.yenEv)}</td><td class="roi ${kc}">${r.kw.toFixed(1)}%</td></tr>`;
   }
   document.getElementById("ev_tbl").innerHTML=h;
+  document.getElementById("ev_info").innerHTML=
+    `【${STRAT_LABEL["CZ一回狙い"]}】スルー${suru} / ${kake?"前駆抜":"前非駆抜"} / 液晶${lcd}G / ${KPATS[kpat].label}・持ち${nm}枚 → RUSH間G=${RG} / 縦=喰pt${val("ev_abs")==="1"?" ・ <b style='color:#C0392B'>既吸収なし台 なし</b>":""}`;
 }
 
-function refreshNm(){
-  const kpat=val("ev_kpat"), opts=NM_OPTIONS[kpat], prev=+document.getElementById("ev_nm").value;
-  const sel=document.getElementById("ev_nm"); sel.innerHTML="";
-  for(const m of opts){let o=new Option(m+" 枚",m);if(m===prev)o.selected=true;sel.add(o);}
-  if(sel.selectedIndex<0)sel.selectedIndex=0;
-}
 refreshNm();
 document.querySelectorAll('input[name=ev_kpat]').forEach(e=>e.addEventListener("change",refreshNm));
 document.querySelectorAll('.ev-tool input, .ev-tool select').forEach(e=>e.addEventListener("change",render));
